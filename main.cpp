@@ -1,10 +1,16 @@
+#include <cstdlib>
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <sstream>
+#include <string>
+#include "VDinamico.h"
+#include "UTM.h"
+#include "Aeropuerto.h"
 
 int main(int argc, const char * argv[]) {
 
+    VectorDinamico<Aeropuerto> aeropuerto; //Creamos un vector de aeropuertos
+    std::cout << "Comienzo de lectura de un fichero " << endl;
     std::ifstream is;
     std::stringstream  columnas;
     std::string fila;
@@ -57,6 +63,8 @@ int main(int argc, const char * argv[]) {
                           << " Posicion=(" << latitud << ", " << longitud << ")"
                           << " Continente=" << continente << " Pais=" << iso_pais
                           << ")" << std::endl;
+                //Creamos objeto tipo UTM
+                UTM UTM1 = UTM(latitud,longitud);
             }
         }
 
@@ -66,7 +74,16 @@ int main(int argc, const char * argv[]) {
     } else {
         std::cout << "Error de apertura en archivo" << std::endl;
     }
-
+    //Muestra las primeras 50 dosis
+    for( int i=0; i<50; i++ ){
+        cout << "Numero " << i << ":" << endl;
+        cout << "ID: " << aeropuerto[i].getId() << ",";
+        cout << "Ident: " << aeropuerto[i].getIdent() << ",";
+        cout << "Tipo: " << aeropuerto[i].getTipo() << ",";
+        cout << "Nombre del Aeropuerto: " << aeropuerto[i].getNombre() << ",";
+        cout << "Continente: " << aeropuerto[i].getContinente();
+        cout << "IsoPais: " << aeropuerto[i].getIsoPais();
+    }
 
     return 0;
 }
