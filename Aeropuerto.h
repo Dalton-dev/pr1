@@ -17,9 +17,10 @@ private:
     std::string _iso_pais;
 public:
     Aeropuerto();
-
     Aeropuerto(const std::string &id, const std::string &ident, const std::string &tipo, const std::string &nombre,
                const std::string &continente, const std::string &isoPais);
+    Aeropuerto(const Aeropuerto &orig);
+
 
     virtual ~Aeropuerto();
 
@@ -40,6 +41,8 @@ public:
 
     const std::string &getIsoPais() const;
     void setIsoPais(const std::string &isoPais);
+
+    Aeropuerto &operator=(const Aeropuerto &f);
 
 };
 

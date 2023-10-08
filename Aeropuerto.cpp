@@ -4,7 +4,7 @@
 
 #include "Aeropuerto.h"
 
-Aeropuerto::Aeropuerto() {}
+Aeropuerto::Aeropuerto() = default;
 
 Aeropuerto::Aeropuerto(const std::string &id, const std::string &ident, const std::string &tipo,
                        const std::string &nombre, const std::string &continente, const std::string &isoPais) : _id(id),
@@ -13,8 +13,36 @@ Aeropuerto::Aeropuerto(const std::string &id, const std::string &ident, const st
                                                                                                                _nombre(nombre),
                                                                                                                _continente(
                                                                                                                        continente),
-                                                                                                               _iso_pais(
-                                                                                                                       isoPais) {}
+                                                                                                               _iso_pais(isoPais) {
+    _id=id;
+    _ident=ident;
+    _tipo=tipo;
+    _nombre=nombre;
+    _continente=continente;
+    _iso_pais=isoPais;
+}
+
+Aeropuerto::Aeropuerto(const Aeropuerto &orig) {
+    this->_id = orig._id;
+    this->_ident = orig._ident;
+    this->_tipo = orig._tipo;
+    this->_nombre = orig._nombre;
+    this->_continente = orig._continente;
+    this->_iso_pais = orig._iso_pais;
+
+}
+
+Aeropuerto &Aeropuerto::operator=(const Aeropuerto &f)
+{
+    _id = f._id;
+    _ident = f._ident;
+    _tipo = f._tipo;
+    _nombre = f._nombre;
+    _continente = f._continente;
+    _iso_pais = f._iso_pais;
+    return *this;
+}
+
 
 Aeropuerto::~Aeropuerto() {
 

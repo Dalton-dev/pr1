@@ -1,9 +1,9 @@
-#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include "VDinamico.h"
+#include <algorithm>
 #include "UTM.h"
 #include "Aeropuerto.h"
 
@@ -74,7 +74,18 @@ int main(int argc, const char * argv[]) {
     } else {
         std::cout << "Error de apertura en archivo" << std::endl;
     }
-    //Muestra las primeras 50 dosis
+    //Muestra los primeros 50 aeropuertos
+    for( int i=0; i<50; i++ ){
+        cout << "Numero " << i << ":" << endl;
+        cout << "ID: " << aeropuerto[i].getId() << ",";
+        cout << "Ident: " << aeropuerto[i].getIdent() << ",";
+        cout << "Tipo: " << aeropuerto[i].getTipo() << ",";
+        cout << "Nombre del Aeropuerto: " << aeropuerto[i].getNombre() << ",";
+        cout << "Continente: " << aeropuerto[i].getContinente();
+        cout << "IsoPais: " << aeropuerto[i].getIsoPais();
+    }
+
+    //Muestra las primeras 50 aeropuerto ordenadas de menor a mayor
     for( int i=0; i<50; i++ ){
         cout << "Numero " << i << ":" << endl;
         cout << "ID: " << aeropuerto[i].getId() << ",";

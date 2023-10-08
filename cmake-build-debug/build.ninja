@@ -55,12 +55,6 @@ build CMakeFiles/pr1.dir/main.cpp.o: CXX_COMPILER__pr1_unscanned_Debug /Users/da
   OBJECT_DIR = CMakeFiles/pr1.dir
   OBJECT_FILE_DIR = CMakeFiles/pr1.dir
 
-build CMakeFiles/pr1.dir/VDinamico.cpp.o: CXX_COMPILER__pr1_unscanned_Debug /Users/daltongabrielabambari/EEDD/pr1/VDinamico.cpp || cmake_object_order_depends_target_pr1
-  DEP_FILE = CMakeFiles/pr1.dir/VDinamico.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/pr1.dir
-  OBJECT_FILE_DIR = CMakeFiles/pr1.dir
-
 build CMakeFiles/pr1.dir/Aeropuerto.cpp.o: CXX_COMPILER__pr1_unscanned_Debug /Users/daltongabrielabambari/EEDD/pr1/Aeropuerto.cpp || cmake_object_order_depends_target_pr1
   DEP_FILE = CMakeFiles/pr1.dir/Aeropuerto.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics
@@ -81,7 +75,7 @@ build CMakeFiles/pr1.dir/UTM.cpp.o: CXX_COMPILER__pr1_unscanned_Debug /Users/dal
 #############################################
 # Link the executable pr1
 
-build pr1: CXX_EXECUTABLE_LINKER__pr1_Debug CMakeFiles/pr1.dir/main.cpp.o CMakeFiles/pr1.dir/VDinamico.cpp.o CMakeFiles/pr1.dir/Aeropuerto.cpp.o CMakeFiles/pr1.dir/UTM.cpp.o
+build pr1: CXX_EXECUTABLE_LINKER__pr1_Debug CMakeFiles/pr1.dir/main.cpp.o CMakeFiles/pr1.dir/Aeropuerto.cpp.o CMakeFiles/pr1.dir/UTM.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6
   OBJECT_DIR = CMakeFiles/pr1.dir
   POST_BUILD = :
